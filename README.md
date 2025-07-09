@@ -80,3 +80,10 @@ poetry run jupyter lab
 # Con pip (entorno virtual activado)
 jupyter lab
 ```
+
+## Ejecutar la implementación del trabajo práctico 1
+
+```bash
+# Con Poetry
+poetry run python trabajo_practico_1/main.py
+```
