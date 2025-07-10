@@ -6,7 +6,7 @@ Todos los discos deben terminar ordenados de mayor a menor forma en la varilla d
 (Mayor a menor lo usamos de aquí en adelante para indicar la restricción de no colocar un disco más grande sobre uno más pequeño)
 
 Environment:
-Tres varillas, y cinco discos de tamaños únicos, y los discos en todas las varillas están ordenados de mayor a menor.
+Tres varillas, y cinco discos de tamaños únicos, y los discos en todas las varillas están ordenados de mayor a menor. El estado inicial posee los cinco discos en la varilla izquierda, ordenados por tamaño de mayor a menor.
 
 Actuators:
 Mover discos entre varillas, respetando que solo se puede mover un disco a la vez.
@@ -17,19 +17,24 @@ El agente percibe cuántos discos hay y en qué orden se encuentran en cada vari
 
 
 2. ¿Cuáles son las propiedades del entorno de trabajo?
-
-Totalmente observable, determinista, secuencial, estático, discreto y de agente individual
+    - Totalmente observable: los sensores del agente tienen acceso completo a todo el estado relevante del entorno en todo momento.
+    - Determinista: el siguiente estado del entorno está completamente determinado por el estado actual y la acción del agente.
+    - Secuencial: las acciones actuales influyen en situaciones futuras
+    - Estático: el entorno no cambia mientras el agente está decidiendo qué hacer.
+    - Discreto: el entorno tiene un número finito de percepciones, acciones y estados claramente definidos.
+    - De agente individual: solo hay un agente que toma decisiones relevantes.
+    - Conocido: el agente conoce las reglas, los efectos de sus acciones y puede predecir resultados.
 
 
 3. En el contexto de este problema, defina los siguientes conceptos:
     - Estado: Representa la configuración específica de los discos en las varillas en un momento dado
                 Usamos la clase # StatesHanoi de aima_libs
 
-    - Espacio de estados: Para 5 discos, existen 3ˆ5 = 243 posibles estados. 
+    - Espacio de estados: Conjunto de todos los estados posibles. Para 5 discos, existen 3ˆ5 = 243 posibles estados. 
         (ya que cada disco puede estar en una de las tres varillas).
 
-    - Árbol de búsqueda Es una representación de las secuencias de acciones que el agente podría tomar desde el estado inicial.
-        Cada nodo en el árbol corresponde a un estado alcanzable, y las ramas, las acciones válidas de un estado a otro.
+    - Árbol de búsqueda: Es una representación de las secuencias de acciones que el agente podría tomar desde el estado inicial.
+        Cada nodo en el árbol corresponde a un estado alcanzable, y las ramas, las acciones válidas para pasar de un estado a otro.
         Usamos # tree_hanoi.py, donde cada NodeHanoi es un nodo del árbol de búsqueda.
 
     - Nodo de búsqueda: Un nodo de búsqueda es una estructura de datos dentro del árbol de búsqueda. 
