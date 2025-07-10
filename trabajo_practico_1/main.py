@@ -25,13 +25,13 @@ def main():
 
     performance_results = dfs.run_performance_analysis(num_runs=10)
 
-    print("\nPromedio y Desvío Estándar de 10 ejecucioens")
+    print(f"\nPromedio y Desvío Estándar de {performance_results['num_runs']} ejecuciones")
     print(f"Tiempo promedio de ejecución: {performance_results['average_time_seconds']:.4f} segundos")
     print(f"Desvío estándar del tiempo: {performance_results['std_dev_time_seconds']:.4f} segundos")
     print(f"Memoria promedio utilizada: {performance_results['average_memory_kb']/ 1024:.2f} MB")
     print(f"Desvío estándar de memoria: {performance_results['std_dev_memory_kb']/ 1024:.2f} MB")
     print(f"Costo: {performance_results['average_cost']}")
-    print(f"Desvío estándar del costo: {performance_results['std_dev_cost']} MB")
+    print(f"Desvío estándar del costo: {performance_results['std_dev_cost']}")
 
 if __name__ == "__main__":
     main()
