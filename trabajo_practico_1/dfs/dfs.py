@@ -1,6 +1,7 @@
 import time
 import statistics
-import resource
+import psutil
+import os
 
 import aima_libs.hanoi_states as hanoi_states
 from aima_libs.tree_hanoi import NodeHanoi
@@ -73,14 +74,16 @@ class DFS:
         memories = []
         cost = [] 
         
+        process = psutil.Process(os.getpid())
+        
         for i in range(num_runs):
-            mem_before = resource.getrusage(resource.RUSAGE_SELF).ru_maxrss
+            mem_before = process.memory_info().rss / (1024 ** 2)  # Convertir a MB
             start_time = time.perf_counter()
             
             solution_node, metrics = self.depth_first_search()
             
             end_time = time.perf_counter()
-            mem_after = resource.getrusage(resource.RUSAGE_SELF).ru_maxrss
+            mem_after = process.memory_info().rss / (1024 ** 2)  # Convertir a MB
 
             memories.append(mem_after - mem_before)
             times.append(end_time - start_time)
