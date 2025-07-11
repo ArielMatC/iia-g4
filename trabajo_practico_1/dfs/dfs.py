@@ -1,8 +1,3 @@
-import time
-import statistics
-import psutil
-import os
-
 import aima_libs.hanoi_states as hanoi_states
 from aima_libs.tree_hanoi import NodeHanoi
 
@@ -67,36 +62,5 @@ class DFS:
             "nodes_in_frontier": len(frontier),
             "max_depth": self.max_depth_reached,
             "cost_total": node.state.accumulated_cost if solution_found else None,
-        }
-
-    def run_performance_analysis(self, num_runs: int = 10):
-        times = []
-        memories = []
-        cost = [] 
-        
-        process = psutil.Process(os.getpid())
-        
-        for i in range(num_runs):
-            mem_before = process.memory_info().rss / (1024 ** 2)  # Convertir a MB
-            start_time = time.perf_counter()
-            
-            solution_node, metrics = self.depth_first_search()
-            
-            end_time = time.perf_counter()
-            mem_after = process.memory_info().rss / (1024 ** 2)  # Convertir a MB
-
-            memories.append(mem_after - mem_before)
-            times.append(end_time - start_time)
-            cost.append(metrics['cost_total'] if metrics['solution_found'] else None)  
-
-        return {
-            "average_time_seconds": statistics.mean(times),
-            "std_dev_time_seconds": statistics.stdev(times) if num_runs > 1 else 0.0,
-            "average_memory_kb": statistics.mean(memories),
-            "std_dev_memory_kb": statistics.stdev(memories) if num_runs > 1 else 0.0,
-            "num_runs": num_runs,
-            "average_cost": statistics.mean(cost) if cost else None,
-            "std_dev_cost": statistics.stdev(cost) if num_runs > 1 else None,
-            "last_run_metrics": metrics
         }
         
