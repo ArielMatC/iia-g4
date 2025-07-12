@@ -32,8 +32,8 @@ def main():
     print(f"\nPromedio y Desvío Estándar de {performance_results['num_runs']} ejecuciones")
     print(f"Tiempo promedio de ejecución: {performance_results['average_time_seconds']:.4f} segundos")
     print(f"Desvío estándar del tiempo: {performance_results['std_dev_time_seconds']:.4f} segundos")
-    print(f"Memoria promedio utilizada: {performance_results['average_memory_kb']/ 1024:.2f} MB")
-    print(f"Desvío estándar de memoria: {performance_results['std_dev_memory_kb']/ 1024:.2f} MB")
+    print(f"Memoria promedio utilizada: {performance_results['average_memory_kb']:.2f} KB")
+    print(f"Desvío estándar de memoria: {performance_results['std_dev_memory_kb']:.2f} KB")
     print(f"Costo: {performance_results['average_cost']}")
     print(f"Desvío estándar del costo: {performance_results['std_dev_cost']}")
 
