@@ -75,8 +75,8 @@ más los hermanos no explorados de esos nodos.
 Resultados ejecución:
 Tiempo promedio de ejecución : 0.0028 segundos
 Desviación estandard : 0.0001 segundos
-Memoria promedio: 41.60 MB
-Desviación estandard : 73.98 MB
+Memoria promedio utilizada: 210.60 KB
+Desvío estándar de memoria: 8.63 KB
 
 7. Si la solución óptima es de $2^k - 1$ movimientos (siendo *k* el número de discos), ¿qué tan lejos está la solución encontrada por el algoritmo implementado de esa solución óptima? 
 
