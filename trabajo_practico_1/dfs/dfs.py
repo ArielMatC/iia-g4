@@ -48,7 +48,7 @@ class DFS:
             
             # Agregamos a la frontera los nodos sucesores que no hayan sido visitados
             for child in node.expand(self.problem): #'mueve' y retorna la lista de nodos hijos
-                if child.state not in explored:
+                if child.state not in explored and child not in frontier:
                     frontier.append(child)
 
         # Si no se encuentra solución, devolvemos métricas igualmente

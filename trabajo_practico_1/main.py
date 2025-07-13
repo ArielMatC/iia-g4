@@ -35,7 +35,9 @@ def main():
     print(f"Memoria promedio utilizada: {performance_results['average_memory_kb']:.2f} KB")
     print(f"Desvío estándar de memoria: {performance_results['std_dev_memory_kb']:.2f} KB")
     print(f"Costo: {performance_results['average_cost']}")
-    print(f"Desvío estándar del costo: {performance_results['std_dev_cost']}")
+    print(f"Desvío estándar del costo: {performance_results['std_dev_cost']} MB")
+    
+    solution_node.generate_solution_for_simulator()
 
 def run_performance_analysis(dfs, num_runs: int = 10):
     times = []
