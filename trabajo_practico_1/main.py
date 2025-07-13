@@ -32,6 +32,8 @@ def main():
     print(f"Desvío estándar de memoria: {performance_results['std_dev_memory_kb']/ 1024:.2f} MB")
     print(f"Costo: {performance_results['average_cost']}")
     print(f"Desvío estándar del costo: {performance_results['std_dev_cost']} MB")
+    
+    solution_node.generate_solution_for_simulator()
 
 if __name__ == "__main__":
     main()
