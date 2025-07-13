@@ -81,9 +81,13 @@ poetry run jupyter lab
 jupyter lab
 ```
 
-## Ejecutar la implementación del trabajo práctico 1
+## Ejecutar la implementación del trabajo práctico 1 (con Poetry)
 
 ```bash
-# Con Poetry
+# Algoritmo de busqueda
 poetry run python trabajo_practico_1/main.py
+```
+```bash
+# Simulacion
+poetry run python trabajo_practico_1/simulator/simulation_hanoi.py
 ```

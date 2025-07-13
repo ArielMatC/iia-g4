@@ -1,9 +1,17 @@
 import time
 import statistics
 import tracemalloc
+from pathlib import Path
 
 #from bfs.bfs import BFS
 from dfs.dfs import DFS
+
+
+ROOT_DIR = Path(__file__).resolve().parent
+INITIAL_STATE_DEST = ROOT_DIR/"simulator"/"initial_state.json"
+SEQUENCE_DEST =ROOT_DIR/"simulator"/"sequence.json"
+
+#INITIAL_STATE_PATH = Path("./simulator/initial_state.json").resolve()
 
 def main():
     """
@@ -26,6 +34,8 @@ def main():
     print("\nAcciones que el agente debería aplicar para llegar al objetivo")
     for act in solution_node.solution():
         print(act)
+
+    solution_node.generate_solution_for_simulator(initial_state_file=INITIAL_STATE_DEST, sequence_file=SEQUENCE_DEST)
 
     performance_results = run_performance_analysis(dfs, num_runs=10)
 
