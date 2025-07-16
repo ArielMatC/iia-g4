@@ -50,40 +50,48 @@ El agente percibe cuántos discos hay y en qué orden se encuentran en cada vari
 
     - Frontera: Es la colección de nodos generados por el algoritmo de búsqueda pero que aún no han sido explorados o "expandidos". 
         Estos son los candidatos para el próximo paso en la búsqueda.
-        # frontier = [NodeHanoi(self.problem.initial)] # La inicializamos como una lista 
+        # frontier = [NodeHanoi(self.problem.initial)] # La inicializamos como una lista, conteniendo el nodo raíz o estado inicial 
         # en el marco de la búsqueda DFS la usamos como un Stack o lista LIFO 
 
 
 4. Implemente algún método de búsqueda. Podés elegir cualquiera excepto búsqueda en anchura (breadth-first search),
-     que ya fue desarrollada en clase. Sos libre de utilizar cualquiera de los algoritmos vistos, o incluso explorar nuevos.
+que ya fue desarrollada en clase. Sos libre de utilizar cualquiera de los algoritmos vistos, o incluso explorar nuevos.
 
 Ver # class DFS
 
 
-5. ¿Cuál es la complejidad teórica en tiempo y memoria del algoritmo elegido?
+5. ¿Cuál es la complejidad teórica en tiempo y memoria del algoritmo elegido (DFS)?
 
-En tiempo es O(bˆm), donde b es el número máximo de nodos hijo por nodo, 
-En el peor caso, DFS explora todo el árbol hasta su profundidad máxima m.
+    - Complejidad en tiempo: 
+    La complejidad en el peor caso es O(b^m), donde:
 
-En espacio es O(b⋅m) 
-En el peor caso, la almacena un nodo por cada nivel de profundidad a lo largo de un camino profundo,
-más los hermanos no explorados de esos nodos.
+        - b es el número máximo de hijos por nodo.
+
+        - m es la profundidad máxima del árbol.
+    Esto se debe a que, en el peor de los casos, el algoritmo DFS explora todos los nodos hasta la máxima profundidad sin encontrar la solución.
+
+    - Complejidad en espacio:
+    La complejidad espacial es O(b·m). Esto se debe a que DFS necesita almacenar un camino desde la raíz hasta un nodo hoja (como máximo m nodos), además de los nodos hermanos no explorados de cada nodo en ese camino, lo que puede llegar a ser hasta b por cada nivel.
 
 
 6. A nivel de implementación, ¿cuánto tiempo y memoria utiliza el algoritmo? (Se recomienda ejecutarlo 10 veces y calcular el promedio y el desvío estándar de ambas métricas).
 
-Resultados ejecución:
-Tiempo promedio de ejecución : 0.0028 segundos
-Desviación estandard : 0.0001 segundos
-Memoria promedio utilizada: 210.60 KB
-Desvío estándar de memoria: 8.63 KB
+    Resultados ejecución:
+    - Tiempo promedio de ejecución : 0.0028 segundos
+    - Desviación estandard : 0.0001 segundos
+    - Memoria promedio utilizada: 210.60 KB
+    - Desvío estándar de memoria: 8.63 KB
 
 7. Si la solución óptima es de $2^k - 1$ movimientos (siendo *k* el número de discos), ¿qué tan lejos está la solución encontrada por el algoritmo implementado de esa solución óptima? 
 
-Costo promedio de 10 ejeciciones con 5 discos: 121.0
-Desviación estandard : 0.0
+    - Para el caso de 5 discos, la solución óptima requiere:
 
-121 son casi 4 veces el número óptimo de movimientos
-2ˆk - 1 = 31,   
+        2^5 − 1 = 31 movimientos.
 
-Se puede concluir que DFS en 4 veces menos óptimo que el BFS visto en clase
+    - El algoritmo implementado, en un promedio de 10 ejecuciones, realizó:
+
+        81 movimientos, con una desviación estándar de 0.0.
+       
+    Por lo tanto, la solución encontrada se aleja de la óptima en 50 movimientos por encima de la mínima cantidad necesaria.
+
+    
