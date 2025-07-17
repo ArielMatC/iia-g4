@@ -3,7 +3,7 @@ from aima_libs.tree_hanoi import NodeHanoi
 
 class DFS:
     """
-    Clase para resolver el problema de la Torre de Hanoi usando Búsqueda en Profundidad (DFS).
+    Clase para resolver el problema de la Torre de Hanoi usando Búsqueda Primero en Profundidad (DFS).
     """
 
     def __init__(self, number_disks: int = 5):
