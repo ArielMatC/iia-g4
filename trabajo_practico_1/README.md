@@ -45,4 +45,4 @@ Para ahorrar tiempo, pueden utilizar el código ya implementado en Python dispon
 
 - Resultado de la [simulacion](./HanoiDFS.mp4).
 
-<video src="./HanoiDFS.mp4" controls width="640" height="360" autoplay loop muted/>
+<video src="https://github.com/ArielMatC/iia-g4/blob/alexcure/trabajo_practico_1/HanoiDFS.mp4" controls width="640" height="360" autoplay loop muted/>
