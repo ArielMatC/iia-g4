@@ -36,3 +36,13 @@ Si agregan archivos `.json` para usar en el simulador, mejor aún. Pueden subir 
 Pueden utilizar todos los recursos que consideren necesarios para resolver este trabajo. Tienen libertad para elegir el lenguaje de programación y el enfoque de implementación.
 
 Para ahorrar tiempo, pueden utilizar el código ya implementado en Python disponible en el repositorio [hanoi_tower](https://github.com/FIUBA-Posgrado-Inteligencia-Artificial/intro_ia/tree/main/clase2/hanoi_tower). Si optan por esta alternativa, solo deberán implementar el algoritmo de búsqueda. Sin embargo, es fundamental que lean y comprendan cada parte del código existente.
+
+
+### Para la solución elegimos el algoritmo de búsqueda primero en profundidad
+
+- Solución a las preguntas, en el archivo [solución.txt](./solucion.txt) de este directorio
+- Código de la solución en este repo [main.py](./main.py), con el algoritmo de búsqueda en el archivo [dfs.py](./dfs/dfs.py)
+
+- Resultado de la simulación:
+
+<video src="HanoiDFS.mp4" controls width="640" height="360" autoplay loop muted/>

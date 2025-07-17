@@ -1,3 +1,5 @@
+Búsqueda Primero en Profundidad (DFS)
+
 1. ¿Cuáles son los PEAS de este problema? (Performance, Environment, Actuators, Sensors)
 
 Performance:
