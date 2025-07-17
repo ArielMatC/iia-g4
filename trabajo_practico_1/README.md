@@ -40,9 +40,9 @@ Para ahorrar tiempo, pueden utilizar el código ya implementado en Python dispon
 
 ### Para la solución elegimos el algoritmo de búsqueda primero en profundidad
 
-- Solución a las preguntas, en el archivo [solución.txt](./solucion.txt) de este directorio
-- Código de la solución en este repo [main.py](./main.py), con el algoritmo de búsqueda en el archivo [dfs.py](./dfs/dfs.py)
+- Solución a las preguntas, en el archivo [solución.txt](./solucion.txt) de este directorio.
+- Código de la solución en este repo [main.py](./main.py) con el algoritmo de búsqueda en el archivo [dfs.py](./dfs/dfs.py).
 
-- Resultado de la simulación:
+- Resultado de la [simulacion](./HanoiDFS.mp4).
 
-<video src="HanoiDFS.mp4" controls width="640" height="360" autoplay loop muted/>
+<video src="./HanoiDFS.mp4" controls width="640" height="360" autoplay loop muted/>
