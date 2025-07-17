@@ -3,7 +3,7 @@ from aima_libs.tree_hanoi import NodeHanoi
 
 class BFS:
     """
-    Clase para resolver el problema de la Torre de Hanoi usando Búsqueda en Anchura (BFS).
+    Clase para resolver el problema de la Torre de Hanoi usando Búsqueda Primero en Anchura (BFS).
     """
 
     def __init__(self, number_disks: int = 5):

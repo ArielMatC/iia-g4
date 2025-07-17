@@ -16,3 +16,7 @@ venv.bak/
 
 # Visual Studio Code settings
 .vscode/
+
+# System files
+.DS_Store
+*/.DS_Store

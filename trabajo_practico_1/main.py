@@ -2,18 +2,25 @@ import time
 import statistics
 import tracemalloc
 
-#from bfs.bfs import BFS
+from bfs.bfs import BFS
 from dfs.dfs import DFS
+
+ALGORITHM = "DFS"
+NUM_DISKS = 5
+NUM_RUNS = 10
+
 
 def main():
     """
     Función principal para resolver el problema de la Torre de Hanoi de 5 discos con DFS.
     """
-    dfs = DFS(number_disks=5)
-    solution_node, metrics = dfs.depth_first_search()
+    if ALGORITHM == "DFS":
+        search_algorithm = DFS(number_disks=NUM_DISKS)
+        solution_node, metrics = search_algorithm.depth_first_search()
 
-    # bfs = BFS(number_disks=num_disks)
-    # solution_node, metrics = bfs.breadth_first_search()
+    elif ALGORITHM == "BFS":
+        search_algorithm = BFS(number_disks=NUM_DISKS)
+        solution_node, metrics = search_algorithm.breadth_first_search()
 
     print("Métricas:")
     for key, value in metrics.items():
@@ -27,7 +34,7 @@ def main():
     for act in solution_node.solution():
         print(act)
 
-    performance_results = run_performance_analysis(dfs, num_runs=10)
+    performance_results = run_performance_analysis(search_algorithm, num_runs=NUM_RUNS)
 
     print(f"\nPromedio y Desvío Estándar de {performance_results['num_runs']} ejecuciones")
     print(f"Tiempo promedio de ejecución: {performance_results['average_time_seconds']:.4f} segundos")
@@ -39,7 +46,7 @@ def main():
     
     solution_node.generate_solution_for_simulator()
 
-def run_performance_analysis(dfs, num_runs: int = 10):
+def run_performance_analysis(search_algorithm, num_runs: int = 10):
     times = []
     memories = []
     cost = [] 
@@ -47,9 +54,12 @@ def run_performance_analysis(dfs, num_runs: int = 10):
     for i in range(num_runs):
         tracemalloc.start()
         start_time = time.perf_counter()
-        
-        solution_node, metrics = dfs.depth_first_search()
-        
+
+        if ALGORITHM == "DFS":
+            solution_node, metrics = search_algorithm.depth_first_search()
+        elif ALGORITHM == "BFS":
+            solution_node, metrics = search_algorithm.breadth_first_search()
+
         end_time = time.perf_counter()
         current, peak = tracemalloc.get_traced_memory()
         tracemalloc.stop()
