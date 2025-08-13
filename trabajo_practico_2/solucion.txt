@@ -6,10 +6,11 @@ RESPUESTAS:
         El atributo con mayor correlación con el target es MedInc (ingreso medio) con un valor de 0.69
 
     - ¿Cuáles atributos parecen estar más correlacionados entre sí?
-        Hay una mayor correlación entre los atributos AveRooms y AveBedrms de 0.86,
-        y los atributos Latitud y Longitud con -0.92 (esta última es negativa, lo que en general indica
-        que cuando una aumenta la otra tiende a disminuir, en este caso puede estar relacionada con un
-        patrón geográfico o de muestreo).
+        Hay una mayor correlación entre los atributos AveRooms y AveBedrms de 0.86.
+        Latitud y Longitud presentan una correlación de -0.92, lo que sugiere que al
+        aumentar una, la otra tiende a disminuir. Esto podría deberse a un patrón
+        geográfico o de muestreo; no obstante, esta correlación no implica que un
+        cambio en Latitud cause un cambio en Longitud, y viceversa.
 
 
 2. Graficar los histogramas de los distintos atributos y del target. 
